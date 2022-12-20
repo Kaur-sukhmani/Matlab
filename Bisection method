@@ -1,0 +1,24 @@
+clc
+clear all;
+format long;
+f=@(x)cos(x)-0.5-sin(x)
+a=input('enter a')
+b=input('enter b')
+tol=0.00
+if f(a)*f(b)>0
+    fprintf('wrong choice');
+else
+    while abs(a-b)>tol
+        c=(a+b)/2;
+        if f(a)*f(c)<0
+            b=c;
+        else
+            a=c;
+        end
+    end
+end
+disp(c);
+
+
+
+
