@@ -1,0 +1,17 @@
+clc 
+clear all
+f=@(x)x^2-17
+x0=input('enter x0')
+n=input('enter the number of iterations')
+tol=0.00001
+g=@(x)2*x
+for i=1:1:n
+    x=x0-f(x0)/g(x0)
+    d=abs(x-x0)
+    if d<=tol
+break;
+    else
+        x0=x
+    end
+end
+disp(x)
